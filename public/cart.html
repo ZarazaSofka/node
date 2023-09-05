@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>Корзина</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#">Для неё</a>
+                    <ul class="submenu">
+                        <li><a href="#">Платья</a></li>
+                        <li><a href="#">Свитшоты</a></li>
+                        <li><a href="#">Джинсы</a></li>
+                        <li><a href="#">Футболки</a></li>
+                        <li><a href="#">Куртки</a></li>
+                        <li><a href="#">Блузки</a></li>
+                        <li><a href="#">Юбки</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Для него</a>
+                    <ul class="submenu">
+                        <li><a href="#">Футболки</a></li>
+                        <li><a href="#">Джинсы</a></li>
+                        <li><a href="#">Брюки</a></li>
+                        <li><a href="#">Рубашки</a></li>
+                        <li><a href="#">Шорты</a></li>
+                        <li><a href="#">Толстовки</a></li>
+                        <li><a href="#">Куртки</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="catalog-header">
+            <h2 class="catalog-title">Оформление заказа</h2>
+            <span class="catalog-counter">30 товаров</span>
+        </div>
+        <section class="cart">
+            <div id="cart-items">
+                <div class="cart-item">
+                    <div class="item-image-box">
+                        <img src="img/S3a8746f065534fd2ba4735fa3e83c8593.jpg">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-title">Футболка мужская</div>
+                        <div class="item-color">
+                            <span class="property-name">Цвет:</span>
+                            <span class="property-value">Красный</span>  
+                        </div>
+                        <div class="item-quantity">
+                            <span class="property-name">Количество:</span>
+                            <span class="property-value">5</span>  
+                        </div>
+                        <div class="item-price">5000р</div>
+                    </div>
+                    <i class="remove-item fa fa-trash"></i>
+                </div>
+                <div class="cart-item">
+                    <div class="item-image-box">
+                        <img src="img/S3a8746f065534fd2ba4735fa3e83c8593.jpg">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-title">Футболка мужская</div>
+                        <div class="item-color">
+                            <span class="property-name">Цвет:</span>
+                            <span class="property-value">Красный</span>  
+                        </div>
+                        <div class="item-quantity">
+                            <span class="property-name">Количество:</span>
+                            <span class="property-value">5</span>  
+                        </div>
+                        <div class="item-price">5000р</div>
+                    </div>
+                    <i class="remove-item fa fa-trash"></i>
+                </div>
+                <div class="cart-item">
+                    <div class="item-image-box">
+                        <img src="img/S3a8746f065534fd2ba4735fa3e83c8593.jpg">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-title">Футболка мужская</div>
+                        <div class="item-color">
+                            <span class="property-name">Цвет:</span>
+                            <span class="property-value">Красный</span>  
+                        </div>
+                        <div class="item-quantity">
+                            <span class="property-name">Количество:</span>
+                            <span class="property-value">5</span>  
+                        </div>
+                        <div class="item-price">5000р</div>
+                    </div>
+                    <i class="remove-item fa fa-trash"></i>
+                </div>
+                <div class="cart-item">
+                    <div class="item-image-box">
+                        <img src="img/S3a8746f065534fd2ba4735fa3e83c8593.jpg">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-title">Футболка мужская</div>
+                        <div class="item-color">
+                            <span class="property-name">Цвет:</span>
+                            <span class="property-value">Красный</span>  
+                        </div>
+                        <div class="item-quantity">
+                            <span class="property-name">Количество:</span>
+                            <span class="property-value">5</span>  
+                        </div>
+                        <div class="item-price">5000р</div>
+                    </div>
+                    <i class="remove-item fa fa-trash"></i>
+                </div>
+            </div>
+            <div id="order">
+                <form id="order-form">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Ваш Email:</label>
+                    <input type="email" id="email" required>
+                    <input type="text" placeholder="Промокод" id="promo">
+                    <div class="final-price">
+                        <label>Итого:</label>
+                        <p>20000р</p>
+                    </div>
+                    <button type="submit">Заказать</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Создание компонента карточки товара
+        document.addEventListener('DOMContentLoaded', () => {
+        const cartItemsList = document.getElementById('cart-items');
+        const checkoutForm = document.getElementById('checkout-form');
+
+        // Пример добавления товара в корзину
+        function addToCart(productName) {
+            const listItem = document.createElement('li');
+            listItem.textContent = productName;
+            cartItemsList.appendChild(listItem);
+        }
+
+        // Обработка оформления заказа
+        checkoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Отправка данных на сервер или выполнение других действий при оформлении заказа
+            // Пример:
+            console.log(`Заказ оформлен: Имя: ${name}, Email: ${email}`);
+
+            // Очистка корзины
+            cartItemsList.innerHTML = '';
+            alert('Заказ оформлен! Корзина очищена.');
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>Одежда</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#">Для неё</a>
+                    <ul class="submenu">
+                        <li><a href="#">Платья</a></li>
+                        <li><a href="#">Свитшоты</a></li>
+                        <li><a href="#">Джинсы</a></li>
+                        <li><a href="#">Футболки</a></li>
+                        <li><a href="#">Куртки</a></li>
+                        <li><a href="#">Блузки</a></li>
+                        <li><a href="#">Юбки</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Для него</a>
+                    <ul class="submenu">
+                        <li><a href="#">Футболки</a></li>
+                        <li><a href="#">Джинсы</a></li>
+                        <li><a href="#">Брюки</a></li>
+                        <li><a href="#">Рубашки</a></li>
+                        <li><a href="#">Шорты</a></li>
+                        <li><a href="#">Толстовки</a></li>
+                        <li><a href="#">Куртки</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="catalog-header">
+            <h2 class="catalog-title">Мужская одежда</h2>
+            <span class="catalog-counter">{{products.length}} товаров</span>
+        </div>
+        <div class="container">
+            <div class="product-container" id="products">
+				{{#each products}}
+				<div class="product-card" data-product-id="{{this.productId}}">
+					<div class="image-box">
+						<img class="product-image" src="{{this.data.0.location}}" alt="{{this.name}} ">
+					</div>
+					<p class="product-title">{{this.name}}</p>
+					<div class="product-price-stock">
+						<span class="product-price"><span class="product-price-value">{{this.price}}</span> ₽</span>
+						<span class="product-stock">/ <span class="product-stock-value">{{this.data.0.quantity}}</span> в наличии </span>
+					</div>
+					<div class="color-listing">
+						{{#each this.data}}
+						<label class="color-selector" style="background-color: {{this.color}}" data-color="{{this.color}}"></label>
+						{{/each}}
+					</div>
+					<div class="add-to-cart">
+						<i class="fa fa-minus-circle minus-button quantity-button"></i>
+						<div class="quantity-counter" data-quantity="1">В корзину</div>
+						<i class="fa fa-plus-circle plus-button quantity-button"></i>
+					</div>
+				</div>
+				{{/each}}
+            </div>
+    
+            <div class="cart-button">
+                <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <span class="cart-indicator">0</span>
+            </div>
+        </div>
+    </main>
+	<script src="main.js "></script>
+</body>
+</html>
